@@ -25,7 +25,7 @@
 //   document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
 // }, (error) => console.log(error));},2000);
 
-// Iteration 1 - using callbacks // Using broccoli for callbacks instead of mashed potatoes
+// Iteration 1 - using callbacks // Using mashed potatoes
 // Pirámide de la perdición
 getInstruction(
   "mashedPotatoes",
@@ -56,27 +56,9 @@ getInstruction(
                   (step5) => {
                     document.querySelector("#mashedPotatoes").innerHTML +=
                       `<li>${step5}</li>`;
-                    getInstruction(
-                  "mashedPotatoes",
-                  5,
-                  (step6) => {
-                    document.querySelector("#mashedPotatoes").innerHTML +=
-                      `<li>${step6}</li>`;
-                    getInstruction(
-                  "mashedPotatoes",
-                  6,
-                  (step7) => {
-                    document.querySelector("#mashedPotatoes").innerHTML +=
-                      `<li>${step7}</li>`;
                     document
-                      .querySelector("#mashedPotatoes")
+                      .querySelector("#mashedPotatoesImg")
                       .removeAttribute("hidden");
-                  },
-                  (error) => console.log(error),
-                );
-                  },
-                  (error) => console.log(error),
-                );
                   },
                   (error) => console.log(error),
                 );
@@ -132,11 +114,11 @@ steakInstruction("steak", 0)
   })
   .then((step6) => {
     document.querySelector("#steak").innerHTML += `<li>${step6}</li>`;
+    document.querySelector("#steakImg").removeAttribute("hidden");
     return steakInstruction("steak", 7);
   })
   .then((step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
-    document.querySelector("#steakImg").removeAttribute("hidden");
     return steakInstruction("steak", 8);
   })
   .catch((error) => {
@@ -148,7 +130,7 @@ steakInstruction("steak", 0)
 // ...
 async function broccoliInstruction() {
   try {
-    for(i=0; i<8; i++)
+    for(i=0; i<7; i++)
     {
     const step = await obtainInstruction("broccoli", i);
     document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`;
@@ -162,5 +144,20 @@ async function broccoliInstruction() {
 }
 broccoliInstruction();
 
+async function brusselsSproutsInstruction() {
+  try {
+    for(j=0; j<8; j++) //async for uses the same variable
+    {
+    const step = await obtainInstruction("brusselsSprouts", i);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
+    }
+    
+    
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  } catch (error) {
+    console.log("The brussels sprouts recipe had a problem: ", error);
+  }
+}
+brusselsSproutsInstruction();
 // Bonus 2 - Promise all 
 // ...
