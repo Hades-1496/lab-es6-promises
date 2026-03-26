@@ -3,7 +3,7 @@
 
 // 🚨🚨🚨 Comment out the below code before you start working on the code
 
-// Out of sync
+// Out of sync // mashed potatoes async, this is Iteration 0
 getInstruction("mashedPotatoes", 0, (step1) => {
   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
 }, (error) => console.log(error));
@@ -25,7 +25,7 @@ setTimeout(() => {return getInstruction("mashedPotatoes", 4, (step5) => {
   document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
 }, (error) => console.log(error));},2000);
 
-// Iteration 1 - using callbacks
+// Iteration 1 - using callbacks // Using broccoli for callbacks instead of mashed potatoes
 // Pirámide de la perdición
 getInstruction(
   "broccoli",
@@ -93,7 +93,7 @@ getInstruction(
   (error) => console.log(error),
 );
 
-// Iteration 2 - using promises
+// Iteration 2 - using promises // steak with promise.
 // Me cuesta bastante entenderla
 function steakInstruction(food,step) {
   return new Promise((resolve,reject) => {
@@ -112,43 +112,39 @@ steakInstruction("steak", 0)
   })
   .then((step1) => {
     document.querySelector("#steak").innerHTML += `<li>${step1}</li>`;
-    return steakInstruction("steak", 1);
+    return steakInstruction("steak", 2);
   })
   .then((step2) => {
     document.querySelector("#steak").innerHTML += `<li>${step2}</li>`;
-    return steakInstruction("steak", 2);
+    return steakInstruction("steak", 3);
   })
   .then((step3) => {
     document.querySelector("#steak").innerHTML += `<li>${step3}</li>`;
-    return steakInstruction("steak", 3);
+    return steakInstruction("steak", 4);
   })
   .then((step4) => {
     document.querySelector("#steak").innerHTML += `<li>${step4}</li>`;
-    return steakInstruction("steak", 4);
+    return steakInstruction("steak", 5);
   })
   .then((step5) => {
     document.querySelector("#steak").innerHTML += `<li>${step5}</li>`;
-    return steakInstruction("steak", 5);
+    return steakInstruction("steak", 6);
   })
   .then((step6) => {
     document.querySelector("#steak").innerHTML += `<li>${step6}</li>`;
-    return steakInstruction("steak", 6);
+    return steakInstruction("steak", 7);
   })
   .then((step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
-    return steakInstruction("steak", 7);
-  })
-  .then((step8) => {
-    document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
     document.querySelector("#steakImg").removeAttribute("hidden");
-    return steakInstruction("steak", 7);
+    return steakInstruction("steak", 8);
   })
   .catch((error) => {
     console.log("The steak recipe had a problem: ", error);
   });
 
 
-// Iteration 3 using async/await
+// Iteration 3 using async/await // using brussels sprouts with async/await
 // ...
 async function brusselsInstruction() {
   try {
@@ -165,5 +161,6 @@ async function brusselsInstruction() {
   }
 }
 brusselsInstruction();
-// Bonus 2 - Promise all
+
+// Bonus 2 - Promise all 
 // ...
